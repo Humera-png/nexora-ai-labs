@@ -84,7 +84,7 @@ export default function AIChatbot() {
             initial={{ opacity: 0, y: 24, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 24, scale: 0.96 }}
-            transition={{ duration: 0.25, ease: [0.2, 0.8, 0.2, 1] }}
+            transition={{ duration: 0.25, ease: [0.2, 0.8, 0.2, 1] as const }}
             className="glass-strong fixed bottom-24 right-6 z-40 flex h-[520px] w-[360px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-3xl shadow-2xl"
           >
             <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">

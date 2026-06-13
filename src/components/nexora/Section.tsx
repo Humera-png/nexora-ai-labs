@@ -17,7 +17,7 @@ export default function Section({ id, eyebrow, title, description, children, cla
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-80px" }}
-        transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}
+        transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] as const }}
         className="mx-auto max-w-3xl text-center"
       >
         {eyebrow && (

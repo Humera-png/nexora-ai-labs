@@ -22,7 +22,7 @@ export default function Navbar() {
     <motion.header
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] }}
+      transition={{ duration: 0.7, ease: [0.2, 0.8, 0.2, 1] as const }}
       className="fixed left-1/2 top-4 z-50 -translate-x-1/2 px-4"
     >
       <nav
