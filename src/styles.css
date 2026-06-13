@@ -31,8 +31,9 @@
   --color-electric: var(--electric);
   --color-ai-purple: var(--ai-purple);
   --color-deep: var(--deep);
-  --font-display: "Inter", "SF Pro Display", system-ui, sans-serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Instrument Serif", "Times New Roman", serif;
+  --font-sans: "Geist", "Inter", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
 }
 
 :root {
