@@ -25,7 +25,7 @@ export default function Section({ id, eyebrow, title, description, children, cla
             {eyebrow}
           </div>
         )}
-        <h2 className="mt-5 text-3xl font-semibold tracking-tight md:text-5xl">{title}</h2>
+        <h2 className="mt-5 font-display text-4xl leading-[1.05] tracking-[-0.02em] md:text-6xl">{title}</h2>
         {description && (
           <p className="mx-auto mt-4 max-w-2xl text-base text-muted-foreground md:text-lg">
             {description}

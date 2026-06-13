@@ -35,7 +35,7 @@ export default function Navbar() {
             <span className="absolute inset-0 rounded-full bg-gradient-to-br from-[#2563EB] to-[#7C3AED] blur-[6px] opacity-80" />
             <span className="relative h-3 w-3 rounded-full bg-white" />
           </span>
-          <span className="text-sm font-semibold tracking-tight">Nexora Labs</span>
+          <span className="font-display text-lg tracking-tight">Nexora <span className="serif-italic text-muted-foreground">Labs</span></span>
         </a>
         <div className="mx-1 hidden h-5 w-px bg-white/10 md:block" />
         <ul className="hidden items-center md:flex">

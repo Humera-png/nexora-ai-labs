@@ -31,8 +31,9 @@
   --color-electric: var(--electric);
   --color-ai-purple: var(--ai-purple);
   --color-deep: var(--deep);
-  --font-display: "Inter", "SF Pro Display", system-ui, sans-serif;
-  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Instrument Serif", "Times New Roman", serif;
+  --font-sans: "Geist", "Inter", system-ui, sans-serif;
+  --font-mono: "Geist Mono", ui-monospace, monospace;
 }
 
 :root {
@@ -125,6 +126,9 @@
     border-color: oklch(0.55 0.22 265 / 0.45);
     box-shadow: 0 20px 60px -20px oklch(0.55 0.22 265 / 0.35);
   }
+  .font-display { font-family: var(--font-display); }
+  .font-mono { font-family: var(--font-mono); }
+  .serif-italic { font-family: var(--font-display); font-style: italic; font-weight: 400; letter-spacing: -0.01em; }
 }
 
 @keyframes float-slow {
@@ -141,5 +145,17 @@
   90% { opacity: 1; }
   100% { transform: translateY(100vh); opacity: 0; }
 }
+@keyframes orbit-spin { to { transform: rotate(360deg); } }
+@keyframes scan-line {
+  0% { transform: translateY(0); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+@keyframes ticker {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
 .animate-float-slow { animation: float-slow 7s ease-in-out infinite; }
 .animate-pulse-glow { animation: pulse-glow 3.5s ease-in-out infinite; }
+.animate-ticker { animation: ticker 18s linear infinite; }
+

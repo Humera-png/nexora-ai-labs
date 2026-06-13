@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { Send, X } from "lucide-react";
+import { Send, Sparkles, X } from "lucide-react";
 
 type Msg = { role: "ai" | "user"; text: string };
 
@@ -69,12 +69,22 @@ export default function AIChatbot() {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ delay: 1, type: "spring", stiffness: 200, damping: 18 }}
         onClick={() => { setOpen(true); start(); }}
-        aria-label="Open AI assistant"
-        className="fixed bottom-6 right-6 z-40 flex h-14 w-14 items-center justify-center rounded-full"
+        aria-label="Open Nexora AI assistant"
+        className="group fixed bottom-6 right-6 z-40"
       >
-        <span className="absolute inset-0 animate-pulse-glow rounded-full bg-gradient-to-br from-[#2563EB] to-[#7C3AED] blur-xl" />
-        <span className="relative flex h-14 w-14 items-center justify-center rounded-full border border-white/20 bg-gradient-to-br from-[#2563EB] to-[#7C3AED] shadow-[0_0_30px_rgba(37,99,235,0.6)]">
-          <span className="h-3 w-3 rounded-full bg-white shadow-[0_0_10px_#fff]" />
+        <span className="absolute -inset-2 rounded-full bg-gradient-to-br from-[#2563EB]/40 via-[#7C3AED]/30 to-transparent opacity-70 blur-2xl transition-opacity group-hover:opacity-100" />
+        <span className="glass-strong relative flex items-center gap-2.5 rounded-full border border-white/15 px-4 py-2.5 shadow-[0_10px_40px_-10px_rgba(37,99,235,0.55)] transition-transform group-hover:scale-[1.03]">
+          <span className="relative flex h-6 w-6 items-center justify-center">
+            <span className="absolute inset-0 animate-pulse-glow rounded-full bg-gradient-to-br from-[#2563EB] to-[#7C3AED]" />
+            <Sparkles className="relative h-3.5 w-3.5 text-white" />
+          </span>
+          <span className="font-mono text-[11px] uppercase tracking-[0.18em] text-foreground">
+            Ask Nexora
+          </span>
+          <span className="ml-0.5 flex items-center gap-1">
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400 shadow-[0_0_8px_#34d399]" />
+            <span className="font-mono text-[9px] uppercase tracking-[0.18em] text-muted-foreground">live</span>
+          </span>
         </span>
       </motion.button>
 
