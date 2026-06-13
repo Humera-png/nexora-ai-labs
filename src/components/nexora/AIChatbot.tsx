@@ -1,6 +1,6 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { Send, X } from "lucide-react";
+import { Send, Sparkles, X } from "lucide-react";
 
 type Msg = { role: "ai" | "user"; text: string };
 
