@@ -1,10 +1,14 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import NeuralCore from "./NeuralCore";
 
-const fade = {
+const fade: Variants = {
   hidden: { opacity: 0, y: 24 },
-  show: (i = 0) => ({ opacity: 1, y: 0, transition: { delay: 0.1 + i * 0.08, duration: 0.7, ease: [0.2, 0.8, 0.2, 1] } }),
+  show: (i: number = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: 0.1 + i * 0.08, duration: 0.7, ease: [0.2, 0.8, 0.2, 1] as const },
+  }),
 };
 
 export default function Hero() {
