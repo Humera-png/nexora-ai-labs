@@ -11,6 +11,10 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import ParticleField from "@/components/nexora/ParticleField";
+import Navbar from "@/components/nexora/Navbar";
+import Footer from "@/components/nexora/Footer";
+import AIChatbot from "@/components/nexora/AIChatbot";
 
 function NotFoundComponent() {
   return (
@@ -77,18 +81,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Nexora Labs builds AI-powered applications, LLM products, and custom software infrastructure." },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Nexora Labs builds AI-powered applications, LLM products, and custom software infrastructure." },
+      { title: "Nexora Labs — Building Intelligence For The Future" },
+      { name: "description", content: "Nexora Labs builds AI-powered applications, LLM products, AI agents, and custom software infrastructure." },
+      { name: "author", content: "Nexora Labs" },
+      { property: "og:title", content: "Nexora Labs — Building Intelligence For The Future" },
+      { property: "og:description", content: "Nexora Labs builds AI-powered applications, LLM products, AI agents, and custom software infrastructure." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-      { name: "twitter:title", content: "Lovable App" },
-      { name: "twitter:description", content: "Nexora Labs builds AI-powered applications, LLM products, and custom software infrastructure." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/12d90f65-c1b9-4079-ad76-3e1f7e0a7182/id-preview-075886ac--d8311fa4-b876-4ce0-b62e-6641e73557a4.lovable.app-1781380755463.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/12d90f65-c1b9-4079-ad76-3e1f7e0a7182/id-preview-075886ac--d8311fa4-b876-4ce0-b62e-6641e73557a4.lovable.app-1781380755463.png" },
+      { name: "twitter:title", content: "Nexora Labs" },
+      { name: "twitter:description", content: "Building intelligence for the future." },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -128,8 +129,16 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
-      <Outlet />
+      <div className="dark relative min-h-screen overflow-hidden bg-[#020617] text-foreground">
+        <ParticleField />
+        <Navbar />
+        <main className="relative">
+          {/* Required: nested routes render here. */}
+          <Outlet />
+        </main>
+        <Footer />
+        <AIChatbot />
+      </div>
     </QueryClientProvider>
   );
 }
