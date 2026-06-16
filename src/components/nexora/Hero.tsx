@@ -2,6 +2,7 @@ import { motion, type Variants } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { ArrowRight, Activity, Cpu, Sparkles } from "lucide-react";
 import NeuralCore from "./NeuralCore";
+import Magnetic from "./Magnetic";
 
 const fade: Variants = {
   hidden: { opacity: 0, y: 24 },
