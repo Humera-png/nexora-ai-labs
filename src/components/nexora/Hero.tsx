@@ -67,19 +67,23 @@ export default function Hero() {
             initial="hidden" animate="show" custom={3} variants={fade}
             className="mt-10 flex flex-wrap items-center gap-3"
           >
-            <Link
-              to="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-medium text-[#020617] transition-transform hover:scale-[1.02]"
-            >
-              Build with Nexora
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </Link>
-            <Link
-              to="/projects"
-              className="glass inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-foreground hover:border-white/20"
-            >
-              Explore our work
-            </Link>
+            <Magnetic strength={0.3}>
+              <Link
+                to="/contact"
+                className="group inline-flex items-center gap-2 rounded-full bg-[#FFBF00] px-6 py-3 font-mono text-[12px] uppercase tracking-[0.18em] text-[#020617] transition-transform hover:scale-[1.02] glow-amber"
+              >
+                Build with Nexora
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+              </Link>
+            </Magnetic>
+            <Magnetic strength={0.2}>
+              <Link
+                to="/projects"
+                className="glass inline-flex items-center gap-2 rounded-full px-6 py-3 font-mono text-[12px] uppercase tracking-[0.18em] text-foreground hover:border-[#FFBF00]/40 hover-glitch"
+              >
+                Explore our work
+              </Link>
+            </Magnetic>
           </motion.div>
 
           <motion.div
