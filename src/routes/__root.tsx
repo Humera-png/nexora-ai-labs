@@ -1,6 +1,5 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
-  Outlet,
   Link,
   createRootRouteWithContext,
   useRouter,
@@ -12,9 +11,11 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import ParticleField from "@/components/nexora/ParticleField";
+import NexoraCore from "@/components/nexora/NexoraCore";
 import Navbar from "@/components/nexora/Navbar";
 import Footer from "@/components/nexora/Footer";
 import AIChatbot from "@/components/nexora/AIChatbot";
+import RouteTransition from "@/components/nexora/RouteTransition";
 
 function NotFoundComponent() {
   return (
@@ -96,7 +97,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap",
       },
       {
         rel: "stylesheet",
@@ -131,10 +132,12 @@ function RootComponent() {
     <QueryClientProvider client={queryClient}>
       <div className="dark relative min-h-screen overflow-hidden bg-[#020617] text-foreground">
         <ParticleField />
+        <NexoraCore />
+        <div className="nx-grain-overlay" aria-hidden />
+        <div className="nx-vignette" aria-hidden />
         <Navbar />
-        <main className="relative">
-          {/* Required: nested routes render here. */}
-          <Outlet />
+        <main className="relative z-[2]">
+          <RouteTransition />
         </main>
         <Footer />
         <AIChatbot />
